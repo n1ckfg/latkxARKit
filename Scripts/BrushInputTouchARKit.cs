@@ -7,7 +7,6 @@ public class BrushInputTouchARKit : MonoBehaviour {
 	public enum DrawMode { FREE, FIXED }
 	public DrawMode drawMode = DrawMode.FREE;
 	public float zPos = 1f;
-	public DraggableManager dragMgr;
 
 	[HideInInspector] public bool touchActive = false;
 	[HideInInspector] public bool touchDown = false;
@@ -33,7 +32,7 @@ public class BrushInputTouchARKit : MonoBehaviour {
 			touchUp = true;
 		}
 
-		if (touchActive && !dragMgr.blocked) {
+		if (touchActive) {
 			Vector3 p = lightningArtist.target.transform.position;
 
 			if (drawMode == DrawMode.FREE) {
