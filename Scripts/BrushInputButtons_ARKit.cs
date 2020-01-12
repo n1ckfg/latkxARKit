@@ -9,6 +9,7 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 	//public UnityEngine.XR.iOS.UnityARVideo arVideo;
 	public UnityARCameraManager_Custom arCameraManager;
 	public ShowHideGeneric showHideGeneric;
+	public int fontSize = 25;
 	public bool showButtons = true;
 
 	[HideInInspector] public float LABEL_START_X = 15.0f;
@@ -20,7 +21,9 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 	[HideInInspector] public float BUTTON_SIZE_Y = 90f; //130.0f;
 	[HideInInspector] public float BUTTON_GAP_X = 5.0f;
 	[HideInInspector] public string FLOAT_FORMAT = "F3";
-	[HideInInspector] public string FONT_SIZE = "<size=25>";
+	[HideInInspector] public string FONT_SIZE;
+
+	private GUIStyle guiStyle;
 
 	private int menuCounter = 1;
 	private int menuCounterMax = 2;
@@ -28,6 +31,11 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 
 	void Awake() {
 		if (lightningArtist == null) lightningArtist = GetComponent<LightningArtist>();
+
+		FONT_SIZE = "<size=" + fontSize + ">";
+		guiStyle = new GUIStyle(); //create a new variable
+		guiStyle.fontSize = (int)(fontSize * 1.5f);
+		guiStyle.normal.textColor = Color.white;
 	}
 
 	void Update() {
@@ -162,6 +170,8 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 				menuCounter++;
 				if (menuCounter > menuCounterMax) menuCounter = 1;
 			}
+
+			GUI.Label(new Rect(BUTTON_GAP_X * 2f, Screen.height - (12 * (BUTTON_SIZE_Y - BUTTON_GAP_X)) + fontSize, BUTTON_SIZE_X * 2, BUTTON_SIZE_Y), lightningArtist.statusText, guiStyle);
 		}
 	}
 
