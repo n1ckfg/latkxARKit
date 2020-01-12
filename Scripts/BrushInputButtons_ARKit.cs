@@ -41,14 +41,14 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 			if (menuCounter == 1) {
 				// 1-1.
 				Rect writeButton = new Rect(BUTTON_GAP_X, Screen.height - (1 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				//isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+				//isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
 				if (GUI.Button(writeButton, FONT_SIZE + "Write" + "</size>")) {
 					lightningArtist.armWriteFile = true;
 				}
 
 				// 1-2.
-				Rect freezeButton = new Rect(BUTTON_GAP_X, Screen.height - (2 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				isOn = arCameraManager.freezeUpdate ? "Off" : "On";
+				Rect freezeButton = new Rect(BUTTON_GAP_X, Screen.height - (3 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				isOn = arCameraManager.freezeUpdate ? "ON" : "OFF";
 				if (GUI.Button(freezeButton, FONT_SIZE + "Freeze " + isOn + "</size>")) {
 					//arVideo.freezeUpdate = !arVideo.freezeUpdate;
 					arCameraManager.freezeUpdate = !arCameraManager.freezeUpdate;
@@ -60,15 +60,15 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 				}
 
 				// 1-3.
-				Rect undoButton = new Rect(BUTTON_GAP_X, Screen.height - (3 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				//isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+				Rect undoButton = new Rect(BUTTON_GAP_X, Screen.height - (4 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				//isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
 				if (GUI.Button(undoButton, FONT_SIZE + "Undo" + "</size>")) {
 					lightningArtist.inputEraseLastStroke();
 				}
 
 				// 1-4.
-				Rect colorButton = new Rect(BUTTON_GAP_X, Screen.height - (4 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				isOn = showHideGeneric.target[0].activeSelf ? "Off" : "On";
+				Rect colorButton = new Rect(BUTTON_GAP_X, Screen.height - (5 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				isOn = showHideGeneric.target[0].activeSelf ? "ON" : "OFF";
 				if (GUI.Button(colorButton, FONT_SIZE + "Palette " + isOn + "</size>")) {
 					if (showHideGeneric.target[0].activeSelf) {
 						showHideGeneric.hideColor();
@@ -78,28 +78,28 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 				}
 
 				// 1-5.
-				Rect onionButton = new Rect(BUTTON_GAP_X, Screen.height - (5 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+				Rect onionButton = new Rect(BUTTON_GAP_X, Screen.height - (6 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
 				if (GUI.Button(onionButton, FONT_SIZE + "Onion Skin " + isOn + "</size>")) {
 					lightningArtist.inputOnionSkin();
 				}
 
 				// 1-6.
-				Rect copyFrameButton = new Rect(BUTTON_GAP_X, Screen.height - (6 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				//isOn = m_arCameraPostProcess.enabled ? "Off" : "On";
+				Rect copyFrameButton = new Rect(BUTTON_GAP_X, Screen.height - (7 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				//isOn = m_arCameraPostProcess.enabled ? "ON" : "OFF";
 				if (GUI.Button(copyFrameButton, FONT_SIZE + "Copy Frame" + "</size>")) {
 					lightningArtist.inputNewFrameAndCopy();
 				}
 
 				// 1-7.
-				Rect newFrameButton = new Rect(BUTTON_GAP_X, Screen.height - (7 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				//isOn = m_arCameraPostProcess.enabled ? "Off" : "On";
+				Rect newFrameButton = new Rect(BUTTON_GAP_X, Screen.height - (8 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				//isOn = m_arCameraPostProcess.enabled ? "ON" : "OFF";
 				if (GUI.Button(newFrameButton, FONT_SIZE + "New Frame" + "</size>")) {
 					lightningArtist.inputNewFrame();
 				}
 
 				// 1-8.
-				Rect playButton = new Rect(BUTTON_GAP_X, Screen.height - (8 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+				Rect playButton = new Rect(BUTTON_GAP_X, Screen.height - (9 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
 				isOn = lightningArtist.isPlaying ? "Stop" : "Play";
 				if (GUI.Button(playButton, FONT_SIZE + isOn + "</size>")) {
 					//if (!lightningArtist.isPlaying && !playButtonBlock) {
@@ -112,28 +112,28 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 				}
 
 				// 1-9.
-				Rect rewButton = new Rect(BUTTON_GAP_X, Screen.height - (9 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X/2f, BUTTON_SIZE_Y);
-				//isOn = m_arCameraPostProcess.enabled ? "Off" : "On";
+				Rect rewButton = new Rect(BUTTON_GAP_X, Screen.height - (10 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X/2f, BUTTON_SIZE_Y);
+				//isOn = m_arCameraPostProcess.enabled ? "ON" : "OFF";
 				if (GUI.Button(rewButton, FONT_SIZE + "<|" + "</size>")) {
 					lightningArtist.inputFrameBack();
 				}
 
-				Rect ffButton = new Rect(BUTTON_GAP_X + (BUTTON_SIZE_X/2f), Screen.height - (9 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X/2f, BUTTON_SIZE_Y);
-				//isOn = m_arCameraPostProcess.enabled ? "Off" : "On";
+				Rect ffButton = new Rect(BUTTON_GAP_X + (BUTTON_SIZE_X/2f), Screen.height - (10 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X/2f, BUTTON_SIZE_Y);
+				//isOn = m_arCameraPostProcess.enabled ? "ON" : "OFF";
 				if (GUI.Button(ffButton, FONT_SIZE + "|>" + "</size>")) {
 					lightningArtist.inputFrameForward();
 				}
 			} else if (menuCounter == 2) {
                 // 2-8.
-                Rect layerChangeButton = new Rect(BUTTON_GAP_X, Screen.height - (9 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-                //isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+                Rect layerChangeButton = new Rect(BUTTON_GAP_X, Screen.height - (10 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+                //isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
                 if (GUI.Button(layerChangeButton, FONT_SIZE + "Next Layer" + "</size>")) {
                     lightningArtist.inputNextLayer();
                 }
                 
                 // 2-7.
-                Rect newLayerButton = new Rect(BUTTON_GAP_X, Screen.height - (8 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-                //isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+                Rect newLayerButton = new Rect(BUTTON_GAP_X, Screen.height - (9 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+                //isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
                 if (GUI.Button(newLayerButton, FONT_SIZE + "New Layer" + "</size>")) {
                     lightningArtist.inputNewLayer();
                 }
@@ -141,7 +141,7 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
                 // 2-6.
                 /*
                 Rect webcamButton = new Rect(BUTTON_GAP_X, Screen.height - (7 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-                isOn = webcamPhoto.isShowing ? "Off" : "On";
+                isOn = webcamPhoto.isShowing ? "ON" : "OFF";
                 if (GUI.Button(webcamButton, FONT_SIZE + "Webcam " + isOn + "</size>")) {
                     webcamPhoto.toggleCam();
                 }
@@ -149,15 +149,15 @@ public class BrushInputButtons_ARKit : MonoBehaviour {
 
                 // 2-1.
                 Rect readButton = new Rect(BUTTON_GAP_X, Screen.height - (1 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-				//isOn = lightningArtist.showOnionSkin ? "Off" : "On";
+				//isOn = lightningArtist.showOnionSkin ? "ON" : "OFF";
 				if (GUI.Button(readButton, FONT_SIZE + "Demo" + "</size>")) {
 					lightningArtist.armReadFile = true;
 				}
 			}
 
 			// 10.
-			Rect menuButton = new Rect(BUTTON_GAP_X, Screen.height - (10 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
-			//isOn = m_arCameraPostProcess.enabled ? "Off" : "On";
+			Rect menuButton = new Rect(BUTTON_GAP_X, Screen.height - (11 * (BUTTON_SIZE_Y - BUTTON_GAP_X)), BUTTON_SIZE_X, BUTTON_SIZE_Y);
+			//isOn = m_arCameraPostProcess.enabled ? "ON" : "OFF";
 			if (GUI.Button(menuButton, FONT_SIZE + "MENU " + menuCounter + "</size>")) {
 				menuCounter++;
 				if (menuCounter > menuCounterMax) menuCounter = 1;
